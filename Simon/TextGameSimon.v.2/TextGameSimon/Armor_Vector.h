@@ -8,6 +8,8 @@
 
 #include "Armor.h"
 
+enum ArmorName { ATest1, ATest2} ;
+
 //Armor(string _name, int _cost, ItemType _type, double _damage_reduction, double _accuracy, double _deflect_chance)
 
 std::vector<Armor*> armor_vector{

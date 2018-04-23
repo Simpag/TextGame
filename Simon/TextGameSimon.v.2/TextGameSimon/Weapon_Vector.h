@@ -8,6 +8,8 @@
 
 #include "Weapon.h"
 
+enum WeaponName { WTest1, WTest2 };
+
 //Weapon name (string _name, int _cost, ItemType _type, int _damage, double _crit_chance, double _accuracy)
 
 std::vector<Weapon*> weapon_vector {

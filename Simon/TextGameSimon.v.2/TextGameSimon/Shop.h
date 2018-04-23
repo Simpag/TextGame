@@ -1,13 +1,10 @@
 #pragma once
 
 #include "stdafx.h"
-#include <iostream>
 
 #include "Weapon_Shop.h"
 #include "Armor_Shop.h"
 #include "Potion_Shop.h"
-
-#include "Weapon_Vector.h"
 
 
 void display_shop_menu() {
@@ -32,5 +29,19 @@ void display_shop_menu() {
 	case 3:
 		system("cls");
 		break;
+	}
+}
+
+int buy_item(Item* _item_to_buy, Inventory* _inventory) {
+	int inventory_space = _inventory->get_inventory_size();
+	//std::cout << "I" << inventory_space;
+	//system("Pause");
+
+	if (inventory_space < _inventory->get_max_inventory_space()) { //Only add items if there's room in the inventory
+		_inventory->add_item(_item_to_buy);
+		return 0;
+	}
+	else {
+		return 1;
 	}
 }

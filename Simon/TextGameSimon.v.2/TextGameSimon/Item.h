@@ -1,6 +1,6 @@
 #pragma once
 
-#include "iostream"
+#include "stdafx.h"
 
 enum ItemType { WeaponItem, ArmorItem, PotionItem };
 

@@ -150,10 +150,12 @@
     <ClInclude Include="Armor.h" />
     <ClInclude Include="Armor_Shop.h" />
     <ClInclude Include="Armor_Vector.h" />
+    <ClInclude Include="Character.h" />
+    <ClInclude Include="Display_Inventory.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Equipment_Inventory.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
-    <ClInclude Include="Item_Functions.h" />
     <ClInclude Include="Potion_Shop.h" />
     <ClInclude Include="Shop.h" />
     <ClInclude Include="stdafx.h" />
@@ -165,8 +167,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Armor.cpp" />
+    <ClCompile Include="Character.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Equipment_Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

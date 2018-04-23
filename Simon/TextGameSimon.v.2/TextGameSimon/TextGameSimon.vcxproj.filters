@@ -31,6 +31,18 @@
     <Filter Include="Header Files\Enemy">
       <UniqueIdentifier>{ea36d758-9fa4-4fdb-ab9f-a23c5a8a6f5f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Inventory">
+      <UniqueIdentifier>{1efca519-e890-4387-a75d-a7d068fa48a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Character">
+      <UniqueIdentifier>{f4018a62-6ed7-44ed-bb9b-45c152678f5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Character">
+      <UniqueIdentifier>{86d915f1-9efa-4562-8416-2db74924934a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menu">
+      <UniqueIdentifier>{66f79a1f-5509-43f5-ac08-d61c803ed70f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -69,14 +81,20 @@
     <ClInclude Include="Armor_Vector.h">
       <Filter>Header Files\Items</Filter>
     </ClInclude>
-    <ClInclude Include="Item_Functions.h">
-      <Filter>Header Files\Items</Filter>
-    </ClInclude>
     <ClInclude Include="Inventory.h">
       <Filter>Header Files\Inventory</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>Header Files\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Equipment_Inventory.h">
+      <Filter>Header Files\Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="Display_Inventory.h">
+      <Filter>Header Files\Menu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +115,15 @@
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>Source Files\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>Source Files\Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Equipment_Inventory.cpp">
+      <Filter>Source Files\Inventory</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

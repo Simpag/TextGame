@@ -1,2 +1,7 @@
-﻿  TextGameSimon.cpp
+﻿  Character.cpp
+  Equipment_Inventory.cpp
+  Inventory.cpp
+c:\users\simon\documents\github\textgame\simon\textgamesimon.v.2\textgamesimon\inventory.cpp(13): warning C4018: '<': signed/unsigned mismatch
+  TextGameSimon.cpp
+  Generating Code...
   TextGameSimon.vcxproj -> C:\Users\simon\Documents\GitHub\TextGame\Simon\TextGameSimon.v.2\Debug\TextGameSimon.exe

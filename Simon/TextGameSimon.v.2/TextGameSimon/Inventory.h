@@ -1,14 +1,20 @@
 #pragma once
+#include "Item.h"
 
-void display_inventory() {
-	int _back;
-	int inventory_size = inventory.size();
+class Inventory
+{
+public:
+	Inventory(int _max = 10);
 
-	for (int i = 0; i < inventory_size; i++) {
-		std::cout << "Slot [" << i << "]: " << inventory[i]->get_name() << std::endl;
-	 }
+	void add_item(Item *_item_to_add);
 
-	std::cout << "[0] Back" << std::endl;
-	std::cin >> _back;
-	system("cls");
-}
+	int get_max_inventory_space() { return this->max_inventory_space;  }
+	void set_max_inventory_space(int _max) { this->max_inventory_space = _max;  }
+	int get_inventory_size() { return inventory.size(); }
+	std::string get_name(int _index) { return inventory.at(_index)->get_name(); }
+	Item* get_item(int _index) { return inventory.at(_index); }
+	void remove_item(Item* _item_to_remove);
+protected:
+	std::vector<Item*> inventory;
+	int max_inventory_space;
+};
