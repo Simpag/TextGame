@@ -8,6 +8,6 @@ Equipment_Inventory::Equipment_Inventory(int _space) : Inventory (equipment_inve
 }
 
 void Equipment_Inventory::equip_item(Item* _item_to_equip, Inventory* _inventory) {
-	inventory.push_back(_item_to_equip);
+	this->inventory.push_back(_item_to_equip); //Equipment inventory
 	_inventory->remove_item(_item_to_equip);
 }

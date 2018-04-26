@@ -1,9 +1,12 @@
 #pragma once
-class Enemy
+#include "Character.h"
+
+class Enemy : public Character
 {
 public:
-	Enemy();
-private:
-	int health;
+	Enemy(std::string _name, double _health);
+
+protected:
+
 };
 

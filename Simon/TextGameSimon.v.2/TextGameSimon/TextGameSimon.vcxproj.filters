@@ -19,9 +19,6 @@
     <Filter Include="Header Files\Items">
       <UniqueIdentifier>{bab2e9b1-2e4d-45b5-ad61-4c75a7cf5d1e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Shop">
-      <UniqueIdentifier>{e178eaf8-a137-4274-b8c3-929964de7ef2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Inventory">
       <UniqueIdentifier>{e7eb049f-33c4-43e8-a494-6ca731362920}</UniqueIdentifier>
     </Filter>
@@ -42,6 +39,12 @@
     </Filter>
     <Filter Include="Header Files\Menu">
       <UniqueIdentifier>{66f79a1f-5509-43f5-ac08-d61c803ed70f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menu\Shop">
+      <UniqueIdentifier>{e178eaf8-a137-4274-b8c3-929964de7ef2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menu\Arena">
+      <UniqueIdentifier>{240b76f0-ced8-4d72-a483-cbad0a6c6502}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -64,16 +67,13 @@
       <Filter>Header Files\Items</Filter>
     </ClInclude>
     <ClInclude Include="Armor_Shop.h">
-      <Filter>Header Files\Shop</Filter>
+      <Filter>Header Files\Menu\Shop</Filter>
     </ClInclude>
     <ClInclude Include="Potion_Shop.h">
-      <Filter>Header Files\Shop</Filter>
-    </ClInclude>
-    <ClInclude Include="Shop.h">
-      <Filter>Header Files\Shop</Filter>
+      <Filter>Header Files\Menu\Shop</Filter>
     </ClInclude>
     <ClInclude Include="Weapon_Shop.h">
-      <Filter>Header Files\Shop</Filter>
+      <Filter>Header Files\Menu\Shop</Filter>
     </ClInclude>
     <ClInclude Include="Armor.h">
       <Filter>Header Files\Items</Filter>
@@ -93,8 +93,23 @@
     <ClInclude Include="Equipment_Inventory.h">
       <Filter>Header Files\Inventory</Filter>
     </ClInclude>
-    <ClInclude Include="Display_Inventory.h">
+    <ClInclude Include="Menu_Inventory.h">
       <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu_Shop.h">
+      <Filter>Header Files\Menu\Shop</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu_Main.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu_Arena.h">
+      <Filter>Header Files\Menu\Arena</Filter>
+    </ClInclude>
+    <ClInclude Include="Training.h">
+      <Filter>Header Files\Menu\Arena</Filter>
+    </ClInclude>
+    <ClInclude Include="Fighting.h">
+      <Filter>Header Files\Menu\Arena</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -3,7 +3,7 @@
 #include "stdafx.h"
 
 #include "Weapon_Vector.h"
-#include "Shop.h"
+#include "Menu_Shop.h"
 
 int buy_item(Item* _item_to_buy, Inventory* _inventory);
 void display_shop_menu();
