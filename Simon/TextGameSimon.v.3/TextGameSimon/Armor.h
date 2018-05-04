@@ -2,8 +2,6 @@
 
 #include "Item.h"
 
-enum ArmorType { Helmet, Chest, Leg, Feet, NoArmorType };
-
 class Armor : public Item
 {
 public:

@@ -1,9 +1,9 @@
 #pragma once
 
 #include "stdafx.h"
-#include "Armor.h"
 
-enum ItemType { WeaponItem, ArmorItem, PotionItem };
+enum ItemType { WeaponItem, ArmorItem, PotionItem, NoItem };
+enum ArmorType { Helmet, Chest, Leg, Feet, NoArmorType };
 
 class Item
 {
@@ -14,14 +14,14 @@ public:
 	int get_cost() { return this->cost; }
 	ItemType get_type() { return this->type; }
 
-	virtual ArmorType get_armor_type() { std::cout << "Not implemeted" << std::endl; return NoArmorType; }
-	virtual double get_damage() { std::cout << "Not implemented" << std::endl; return 0; };
-	virtual double get_crit_chance() { std::cout << "Not implemented" << std::endl; return 0; };
-	virtual double get_accuracy() { std::cout << "Not implemented" << std::endl; return 0; };
-	virtual double get_damage_reduction() { std::cout << "Not implemented" << std::endl; return 0; };
-	virtual double get_deflect_chance() { std::cout << "Not implemented" << std::endl; return 0; };
-	virtual double get_health_boost() { std::cout << "Not implemented" << std::endl; return 0; };
+	virtual double get_damage() { std::cout << "Not implemented" << std::endl; return 0; }
+	virtual double get_crit_chance() { std::cout << "Not implemented" << std::endl; return 0; }
+	virtual double get_accuracy() { std::cout << "Not implemented" << std::endl; return 0; }
+	virtual double get_damage_reduction() { std::cout << "Not implemented" << std::endl; return 0; }
+	virtual double get_deflect_chance() { std::cout << "Not implemented" << std::endl; return 0; }
+	virtual double get_health_boost() { std::cout << "Not implemented" << std::endl; return 0; }
 	virtual double get_effectiveness() { std::cout << "Not implemented" << std::endl; return 0; }
+	virtual ArmorType get_armor_type() { std::cout << "Not implemented" << std::endl; return NoArmorType; }
 protected:
 	std::string name;
 	int cost;

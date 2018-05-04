@@ -1,7 +1,7 @@
 #pragma once
 #include "stdafx.h"
 
-#include "Training.h"
+#include "Menu_Training.h"
 
 void display_arena_menu() {
 	int _input;

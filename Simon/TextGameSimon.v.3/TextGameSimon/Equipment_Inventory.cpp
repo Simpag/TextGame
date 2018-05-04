@@ -10,6 +10,11 @@ Equipment_Inventory::Equipment_Inventory() {
 	got_feet = false;
 	got_weapon = false;
 	got_potion = false;
+
+	//Fill the array with empty items
+	for (int i = 0; i < this->equipment_inventory_size; i++) {
+		this->equipment_inventory[i] = new Item("Empty", 0, NoItem);
+	}
 }
 
 void Equipment_Inventory::equip_item(Item* _item_to_equip, Inventory* _inventory, Character* _player) {
@@ -17,12 +22,18 @@ void Equipment_Inventory::equip_item(Item* _item_to_equip, Inventory* _inventory
 	case WeaponItem:
 		if (!this->got_weapon) {
 			std::cout << _item_to_equip->get_name() << " was equipped! \n";
-			this->equipment_inventory[4] = _item_to_equip; //Equipment inventory
-			_inventory->remove_item(_item_to_equip);
-			got_weapon = true;
+			this->equipment_inventory[4] = _item_to_equip; //Equipment from inventory
+			_inventory->remove_item(_item_to_equip); //Remove item from inventory
+			this->got_weapon = true; //Weapon equipped
+			calculate_stats(_player); //Update stats
 		}
 		else {
-			std::cout << "Weapon already equipped! \n";
+			std::cout << "Replaced " << this->equipment_inventory[4]->get_name() << " with " << _item_to_equip->get_name() << std::endl;
+			_inventory->add_item(this->equipment_inventory[4]); //Insert equipped item to inventory
+			this->equipment_inventory[4] = _item_to_equip; //Replace equipment
+			_inventory->remove_item(_item_to_equip); //Remove equipped item from inventory
+			this->got_weapon = true; //Weapon equipped
+			calculate_stats(_player); //Update stats
 		}
 		break;
 
@@ -31,25 +42,73 @@ void Equipment_Inventory::equip_item(Item* _item_to_equip, Inventory* _inventory
 		case Helmet:
 			if (!this->got_helmet) {
 				std::cout << _item_to_equip->get_name() << " was equipped! \n";
-				this->equipment_inventory[5] = _item_to_equip; //Equipment inventory
+				this->equipment_inventory[0] = _item_to_equip;
 				_inventory->remove_item(_item_to_equip);
-				got_helmet = true;
+				this->got_helmet = true;
+				calculate_stats(_player);
 			}
 			else {
-				std::cout << "Helmet already equipped! \n";
+				std::cout << "Replaced " << this->equipment_inventory[0]->get_name() << " with " << _item_to_equip->get_name() << std::endl;
+				_inventory->add_item(this->equipment_inventory[0]); //Insert equipped item to inventory
+				this->equipment_inventory[0] = _item_to_equip; //Replace equipment
+				_inventory->remove_item(_item_to_equip); //Remove equipped item from inventory
+				this->got_helmet = true; //Weapon equipped
+				calculate_stats(_player); //Update stats
 			}
 			break;
 
 		case Chest:
-
+			if (!this->got_chest) {
+				std::cout << _item_to_equip->get_name() << " was equipped! \n";
+				this->equipment_inventory[1] = _item_to_equip; 
+				_inventory->remove_item(_item_to_equip);
+				this->got_chest = true;
+				calculate_stats(_player);
+			}
+			else {
+				std::cout << "Replaced " << this->equipment_inventory[1]->get_name() << " with " << _item_to_equip->get_name() << std::endl;
+				_inventory->add_item(this->equipment_inventory[1]); //Insert equipped item to inventory
+				this->equipment_inventory[1] = _item_to_equip; //Replace equipment
+				_inventory->remove_item(_item_to_equip); //Remove equipped item from inventory
+				this->got_weapon = true; //Weapon equipped
+				calculate_stats(_player); //Update stats
+			}
 			break;
 
 		case Leg:
-
-				break;
+			if (!this->got_leg) {
+				std::cout << _item_to_equip->get_name() << " was equipped! \n";
+				this->equipment_inventory[2] = _item_to_equip; 
+				_inventory->remove_item(_item_to_equip);
+				this->got_leg = true;
+				calculate_stats(_player);
+			}
+			else {
+				std::cout << "Replaced " << this->equipment_inventory[2]->get_name() << " with " << _item_to_equip->get_name() << std::endl;
+				_inventory->add_item(this->equipment_inventory[2]); //Insert equipped item to inventory
+				this->equipment_inventory[2] = _item_to_equip; //Replace equipment
+				_inventory->remove_item(_item_to_equip); //Remove equipped item from inventory
+				this->got_weapon = true; //Weapon equipped
+				calculate_stats(_player); //Update stats
+			}
+			break;
 
 		case Feet:
-
+			if (!this->got_feet) {
+				std::cout << _item_to_equip->get_name() << " was equipped! \n";
+				this->equipment_inventory[3] = _item_to_equip; //Equipment inventory
+				_inventory->remove_item(_item_to_equip);
+				this->got_feet = true;
+				calculate_stats(_player);
+			}
+			else {
+				std::cout << "Replaced " << this->equipment_inventory[3]->get_name() << " with " << _item_to_equip->get_name() << std::endl;
+				_inventory->add_item(this->equipment_inventory[3]); //Insert equipped item to inventory
+				this->equipment_inventory[3] = _item_to_equip; //Replace equipment
+				_inventory->remove_item(_item_to_equip); //Remove equipped item from inventory
+				this->got_weapon = true; //Weapon equipped
+				calculate_stats(_player); //Update stats
+			}
 			break;
 		}
 		break;
@@ -62,7 +121,12 @@ void Equipment_Inventory::equip_item(Item* _item_to_equip, Inventory* _inventory
 			got_potion = true;
 		}
 		else {
-			std::cout << "Potion already equipped! \n";
+			std::cout << "Replaced " << this->equipment_inventory[5]->get_name() << " with " << _item_to_equip->get_name() << std::endl;
+			_inventory->add_item(this->equipment_inventory[5]); //Insert equipped item to inventory
+			this->equipment_inventory[5] = _item_to_equip; //Replace equipment
+			_inventory->remove_item(_item_to_equip); //Remove equipped item from inventory
+			this->got_weapon = true; //Weapon equipped
+			calculate_stats(_player); //Update stats
 		}
 		break;
 	}

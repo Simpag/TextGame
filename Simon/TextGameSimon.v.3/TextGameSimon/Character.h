@@ -3,6 +3,8 @@
 #include "stdafx.h"
 #include "Equipment_Inventory.h"
 
+enum Attack_Type { Basic_Attack, Quick_Attack, Strong_Attack };
+
 class Character
 {
 public:
@@ -13,15 +15,21 @@ public:
 	Character(std::string _name, double _health);
 
 	//Fighting
-	void perform_attack(Character* _opponent, int _type);
+	void perform_attack(Character* _opponent, Attack_Type _type);
 
 	//Misc
 	void remove_money(int _amount) { this->money -= _amount; }
 	void add_health(double _amount);
 
 	//Getters
+	int get_money() { return this->money; }
 	double get_health() { return this->health; }
 	double get_max_health() { return this->max_health; }
+	double get_damage() { return this->damage; }
+	double get_damage_reduction() { return this->damage_reduction; }
+	double get_accuracy() { return this->accuracy; }
+	double get_deflect_chance() { return this->deflect_chance; }
+	double get_crit_chance() { return this->crit_chance; }
 	std::string get_name() { return this->name; }
 
 	//Setters
@@ -43,6 +51,6 @@ protected:
 	std::string name;
 
 	void deal_damage(Character* _opponent, double _damage);
-	void take_damage(Character* _opponent, double _damage);
+	void take_damage(double _damage);
 };
 

@@ -1,8 +1,2 @@
 ﻿  Character.cpp
-  Enemy.cpp
-  Equipment_Inventory.cpp
-  Potion.cpp
-  TextGameSimon.cpp
-c:\users\simon\documents\github\textgame\simon\textgamesimon.v.3\textgamesimon\textgamesimon.cpp(28): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Generating Code...
   TextGameSimon.vcxproj -> C:\Users\simon\Documents\GitHub\TextGame\Simon\TextGameSimon.v.3\Debug\TextGameSimon.exe

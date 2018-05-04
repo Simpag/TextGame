@@ -46,6 +46,9 @@
     <Filter Include="Header Files\Menu\Arena">
       <UniqueIdentifier>{240b76f0-ced8-4d72-a483-cbad0a6c6502}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Fightnig">
+      <UniqueIdentifier>{a26ce572-d385-49e9-9fd2-125b7b91af7a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -105,12 +108,6 @@
     <ClInclude Include="Menu_Arena.h">
       <Filter>Header Files\Menu\Arena</Filter>
     </ClInclude>
-    <ClInclude Include="Training.h">
-      <Filter>Header Files\Menu\Arena</Filter>
-    </ClInclude>
-    <ClInclude Include="Fighting.h">
-      <Filter>Header Files\Menu\Arena</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\..\..\Downloads\v3\Simon\TextGameSimon.v.2\TextGameSimon\Challenge_Enemy_Vector.h">
       <Filter>Header Files\Enemy</Filter>
     </ClInclude>
@@ -119,6 +116,15 @@
     </ClInclude>
     <ClInclude Include="Potion_Vector.h">
       <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Fighting.h">
+      <Filter>Header Files\Fightnig</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu_Training.h">
+      <Filter>Header Files\Menu\Arena</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu_Stats.h">
+      <Filter>Header Files\Menu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

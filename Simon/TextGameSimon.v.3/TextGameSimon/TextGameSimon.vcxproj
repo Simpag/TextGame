@@ -160,6 +160,7 @@
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Menu_Main.h" />
+    <ClInclude Include="Menu_Stats.h" />
     <ClInclude Include="Potion.h" />
     <ClInclude Include="Potion_Shop.h" />
     <ClInclude Include="Menu_Shop.h" />
@@ -167,7 +168,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TextGameSimon.h" />
-    <ClInclude Include="Training.h" />
+    <ClInclude Include="Menu_Training.h" />
     <ClInclude Include="Weapon.h" />
     <ClInclude Include="Weapon_Shop.h" />
     <ClInclude Include="Weapon_Vector.h" />

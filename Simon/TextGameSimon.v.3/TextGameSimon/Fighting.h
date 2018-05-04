@@ -14,7 +14,7 @@ Enemy randomly picks attack
 
 bool fight(Character* _character, Character* _opponent) {
 	int _input, _opponent_attack;
-	int _coin = rand() % 2;
+	int _coin = rand() % 2; //Random number between 0 and 1 (coin flip)
 	bool isPlayer, didPlayerWin;
 	bool isOver = false;
 
@@ -34,12 +34,26 @@ bool fight(Character* _character, Character* _opponent) {
 
 	while (!isOver) {
 		if (isPlayer) {
-			system("cls");
-			display_fight(_character, _opponent);
-			std::cin >> _input;
+			do { 
+				system("cls");
+				display_fight(_character, _opponent);
+				std::cin >> _input; 
+			} while (!(_input < 3) && !(_input >= 0));
 			Sleep(1 * 1000);
 			system("cls");
-			_character->perform_attack(_opponent, _input);
+			switch (_input) {
+			case 0:
+				_character->perform_attack(_opponent, Basic_Attack);
+				break;
+
+			case 1:
+				_character->perform_attack(_opponent, Quick_Attack);
+				break;
+
+			case 2:
+				_character->perform_attack(_opponent, Strong_Attack);
+				break;
+			}
 			Sleep(4 * 1000);
 		}
 		else {
@@ -49,25 +63,26 @@ bool fight(Character* _character, Character* _opponent) {
 			switch (_opponent_attack) {
 			case 0:
 				std::cout << "Opponent performed an basic attack! \n";
+				_opponent->perform_attack(_character, Basic_Attack);
 				break;
 			case 1:
 				std::cout << "Opponent performed an quick attack! \n";
+				_opponent->perform_attack(_character, Quick_Attack);
 				break;
 			case 2:
 				std::cout << "Opponent performed an strong attack! \n";
+				_opponent->perform_attack(_character, Strong_Attack);
 				break;
 			}
-
-			_opponent->perform_attack(_character, _opponent_attack);
 			Sleep(4*1000); 
 		}
 		
 		//Check if anyone won
-		if (_character->get_health() < 0) {
+		if (_character->get_health() < 0) { //Is the player dead
 			didPlayerWin = false;
 			isOver = true;
 		}
-		else if (_opponent->get_health() < 0) {
+		else if (_opponent->get_health() < 0) { //Is the opponent dead
 			didPlayerWin = true;
 			isOver = true;
 		}
@@ -75,7 +90,7 @@ bool fight(Character* _character, Character* _opponent) {
 		isPlayer = !isPlayer; //End turn
 	}
 
-	_character->add_health(_character->get_max_health());
+	_character->add_health(_character->get_max_health()); //Restore player health after match
 
 	return didPlayerWin;
 }
