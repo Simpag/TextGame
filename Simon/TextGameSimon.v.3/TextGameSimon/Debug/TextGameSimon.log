@@ -1,2 +1,3 @@
-﻿  Character.cpp
+﻿  TextGameSimon.cpp
+c:\users\simon\documents\github\textgame\simon\textgamesimon.v.3\textgamesimon\textgamesimon.cpp(30): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   TextGameSimon.vcxproj -> C:\Users\simon\Documents\GitHub\TextGame\Simon\TextGameSimon.v.3\Debug\TextGameSimon.exe

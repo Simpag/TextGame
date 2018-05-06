@@ -126,6 +126,12 @@
     <ClInclude Include="Menu_Stats.h">
       <Filter>Header Files\Menu</Filter>
     </ClInclude>
+    <ClInclude Include="Menu_Sell.h">
+      <Filter>Header Files\Menu\Shop</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_Functions.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

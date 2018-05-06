@@ -6,7 +6,7 @@ class Potion :
 	public Item
 {
 public:
-	Potion(std::string _name, int _cost, ItemType _type, double _effectiveness);
+	Potion(std::string _name, int _cost, int _worth, ItemType _type, double _effectiveness);
 
 	void use_potion(Character* _character);
 

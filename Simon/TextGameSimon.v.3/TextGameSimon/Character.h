@@ -19,6 +19,7 @@ public:
 
 	//Misc
 	void remove_money(int _amount) { this->money -= _amount; }
+	void add_money(int _amount) { this->money += _amount; }
 	void add_health(double _amount);
 
 	//Getters

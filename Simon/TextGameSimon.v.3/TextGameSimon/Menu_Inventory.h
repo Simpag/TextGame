@@ -14,7 +14,7 @@ void display_inventory(Inventory* _inventory, Equipment_Inventory* _e_inventory)
 	}
 	else {
 		for (int i = 0; i < _inventory_size; i++) {
-			std::cout << "Slot [" << i + 1 << "/" << _inventory_size << "]: " << _inventory->get_name(i) << " ID: " << i << std::endl;
+			std::cout << "Slot [" << i + 1 << "/" << "10" << "]: " << _inventory->get_name(i) << " ID: " << i << std::endl;
 		}
 	}
 

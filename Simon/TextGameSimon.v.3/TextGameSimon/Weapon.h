@@ -5,7 +5,7 @@
 class Weapon : public Item
 {
 public:
-	Weapon(std::string _name, int _cost, ItemType _type, double _damage, double _crit_chance, double _accuracy);
+	Weapon(std::string _name, int _cost, int _worth, ItemType _type, double _damage, double _crit_chance, double _accuracy);
 
 	double get_damage() { return this->damage; }
 	double get_crit_chance() { return this->crit_chance; }

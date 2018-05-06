@@ -153,6 +153,7 @@
     <ClInclude Include="Armor_Vector.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="Fighting.h" />
+    <ClInclude Include="Item_Functions.h" />
     <ClInclude Include="Menu_Arena.h" />
     <ClInclude Include="Menu_Inventory.h" />
     <ClInclude Include="Enemy.h" />
@@ -160,6 +161,7 @@
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Menu_Main.h" />
+    <ClInclude Include="Menu_Sell.h" />
     <ClInclude Include="Menu_Stats.h" />
     <ClInclude Include="Potion.h" />
     <ClInclude Include="Potion_Shop.h" />

@@ -13,7 +13,7 @@ Equipment_Inventory::Equipment_Inventory() {
 
 	//Fill the array with empty items
 	for (int i = 0; i < this->equipment_inventory_size; i++) {
-		this->equipment_inventory[i] = new Item("Empty", 0, NoItem);
+		this->equipment_inventory[i] = new Item("Empty", 0, 0, NoItem);
 	}
 }
 

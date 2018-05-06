@@ -8,10 +8,11 @@ enum ArmorType { Helmet, Chest, Leg, Feet, NoArmorType };
 class Item
 {
 public:
-	Item(std::string _name, int _cost, ItemType _type);
+	Item(std::string _name, int _cost, int _worth, ItemType _type);
 
 	std::string get_name() { return this->name; }
 	int get_cost() { return this->cost; }
+	int get_worth() { return this->worth; }
 	ItemType get_type() { return this->type; }
 
 	virtual double get_damage() { std::cout << "Not implemented" << std::endl; return 0; }
@@ -25,6 +26,7 @@ public:
 protected:
 	std::string name;
 	int cost;
+	int worth;
 	ItemType type;
 };
 
