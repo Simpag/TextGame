@@ -1,0 +1,15 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (TextGameSimon.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  stdafx.cpp
+  Armor.cpp
+  Character.cpp
+  Enemy.cpp
+  Equipment_Inventory.cpp
+  Item.cpp
+  Inventory.cpp
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\inventory.cpp(13): warning C4018: '<': signed/unsigned mismatch
+  Potion.cpp
+  TextGame.cpp
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\textgame.cpp(24): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Weapon.cpp
+  Generating Code...
+  TextGame.vcxproj -> C:\Users\simon\Documents\GitHub\TextGame\_Main\TextGame\TextGame\Debug\TextGame.exe
