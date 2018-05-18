@@ -36,6 +36,7 @@ void display_weapon_shop() {
 
 		//Print stats
 		std::cout << "Do you want to buy " << weapon_vector[_input]->get_name() << " for " << weapon_vector[_input]->get_cost() << "?" << std::endl;
+		std::cout << "Damage: " << weapon_vector[_input]->get_damage() << std::endl;
 		std::cout << "Accuracy: " << 100*weapon_vector[_input]->get_accuracy() << "%" << std::endl;
 		std::cout << "Crit Chance: " << 100*weapon_vector[_input]->get_crit_chance() << "%" << std::endl;
 		std::cout << std::endl << "[0] Yes, [1] No" << std::endl;

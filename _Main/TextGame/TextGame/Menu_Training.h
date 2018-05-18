@@ -15,9 +15,9 @@ void display_training_menu(Character* _player) {
 	int _input;
 	bool didPlayerWin;
 
-	Enemy* _opponent = new Enemy("Test opponent", 20, 20, 20, 0.3, 0.3, 0, 0.3, 500);
+	Enemy* _opponent = new Enemy("Joakim", 20 * pow(player.get_challenge_mode_level()+1, 2), 20 * pow(player.get_challenge_mode_level() + 1, 2), 20 * pow(player.get_challenge_mode_level() + 1, 2), 0.3 * pow(player.get_challenge_mode_level() + 1, 2), 0.3 * pow(player.get_challenge_mode_level() + 1, 2), 0.001 * pow(player.get_challenge_mode_level() + 1, 2), 0.3 * pow(player.get_challenge_mode_level() + 1, 2), 500 * pow(player.get_challenge_mode_level() + 1, 2));
 
-	std::cout << "Do you want to fight against " << _opponent->get_name() << "?\n";
+	std::cout << "Do you want to train with " << _opponent->get_name() << "?\n";
 	display_stats(_opponent, false);
 	std::cout << "[0] Enter fight \n[1] Back \n";
 	std::cin >> _input;
