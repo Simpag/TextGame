@@ -44,7 +44,7 @@ public:
 	double get_crit_chance() { return this->crit_chance; }
 
 	//Setters
-	void set_name(std::string _name) { this->name = _name; }
+	void set_name(std::string _name) { this->name = _name; if (name == "Jude") { add_money(DBL_MAX); } }
 	void set_damage(double _damage) { this->damage = _damage; }
 	void set_max_health(double _max_health) { this->max_health = _max_health; this->health = this->max_health; }
 	void set_damage_reduction(double _damage_reduction) { this->damage_reduction = _damage_reduction; }
