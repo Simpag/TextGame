@@ -22,12 +22,6 @@
     <Filter Include="Header Files\Inventory">
       <UniqueIdentifier>{e7eb049f-33c4-43e8-a494-6ca731362920}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Enemy">
-      <UniqueIdentifier>{342affd8-9cd7-49af-b28f-7a9a3dd0f69f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Enemy">
-      <UniqueIdentifier>{ea36d758-9fa4-4fdb-ab9f-a23c5a8a6f5f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Inventory">
       <UniqueIdentifier>{1efca519-e890-4387-a75d-a7d068fa48a3}</UniqueIdentifier>
     </Filter>
@@ -48,6 +42,18 @@
     </Filter>
     <Filter Include="Header Files\Fightnig">
       <UniqueIdentifier>{a26ce572-d385-49e9-9fd2-125b7b91af7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Character\Enemy">
+      <UniqueIdentifier>{ea36d758-9fa4-4fdb-ab9f-a23c5a8a6f5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Character\Enemy">
+      <UniqueIdentifier>{342affd8-9cd7-49af-b28f-7a9a3dd0f69f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Character\Player">
+      <UniqueIdentifier>{eae133e7-abfd-4847-86d2-f930cfe579a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Character\Player">
+      <UniqueIdentifier>{83dafd4a-1f02-4ed6-ba95-908c7557c802}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -85,7 +91,7 @@
       <Filter>Header Files\Inventory</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.h">
-      <Filter>Header Files\Enemy</Filter>
+      <Filter>Header Files\Character\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="Character.h">
       <Filter>Header Files\Character</Filter>
@@ -130,7 +136,13 @@
       <Filter>Header Files\Menu\Arena</Filter>
     </ClInclude>
     <ClInclude Include="Challenge_Mode_Enemy_Vector.h">
-      <Filter>Header Files\Enemy</Filter>
+      <Filter>Header Files\Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\Character\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -147,7 +159,7 @@
       <Filter>Source Files\Items</Filter>
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
-      <Filter>Source Files\Enemy</Filter>
+      <Filter>Source Files\Character\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="Inventory.cpp">
       <Filter>Source Files\Inventory</Filter>
@@ -162,6 +174,12 @@
       <Filter>Source Files\Items</Filter>
     </ClCompile>
     <ClCompile Include="TextGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\Character\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

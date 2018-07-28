@@ -53,8 +53,8 @@ public:
 	void set_crit_chance(double _crit_chance) { this->crit_chance = _crit_chance; }
 
 	//Player functions only
-	void increment_challenge_mode_level() { this->challenge_mode_level++; }
-	int get_challenge_mode_level() { return this->challenge_mode_level; }
+	virtual void increment_challenge_mode_level() { std::cout << "Not implemented" << std::endl; }
+	virtual int get_challenge_mode_level() { std::cout << "Not implemented" << std::endl; return 0; }
 	 
 protected:
 	std::string name;
@@ -77,8 +77,5 @@ protected:
 
 	void deal_damage(Character* _opponent, double _damage);
 	void take_damage(double _damage);
-
-	//Only used for the player
-	int challenge_mode_level = 0;
 };
 

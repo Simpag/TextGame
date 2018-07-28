@@ -153,6 +153,7 @@
     <ClInclude Include="Challenge_Mode_Enemy_Vector.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="Fighting.h" />
+    <ClInclude Include="GameManager.h" />
     <ClInclude Include="Item_Functions.h" />
     <ClInclude Include="Menu_Arena.h" />
     <ClInclude Include="Menu_Challenge_Mode.h" />
@@ -164,6 +165,7 @@
     <ClInclude Include="Menu_Main.h" />
     <ClInclude Include="Menu_Sell.h" />
     <ClInclude Include="Menu_Stats.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Potion.h" />
     <ClInclude Include="Potion_Shop.h" />
     <ClInclude Include="Menu_Shop.h" />
@@ -180,8 +182,10 @@
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Equipment_Inventory.cpp" />
+    <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Potion.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
