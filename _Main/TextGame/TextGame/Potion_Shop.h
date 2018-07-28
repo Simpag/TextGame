@@ -6,10 +6,10 @@
 
 void display_potion_shop() {
 	int _input;
-	int _potion_vector_length = potion_vector.size();
+	int _potion_vector_length = potion_vector.vector.size();
 
 	for (int i = 0; i < _potion_vector_length; i++) {
-		std::cout << "[" << i << "]" << " " << potion_vector[i]->get_name() << " Cost: " << potion_vector[i]->get_cost() << std::endl;
+		std::cout << "[" << i << "]" << " " << potion_vector.vector[i]->get_name() << " Cost: " << potion_vector.vector[i]->get_cost() << std::endl;
 	}
 
 	std::cout << "\n[" << _potion_vector_length << "] Back \n[n] Buy item \n";
@@ -28,14 +28,14 @@ void display_potion_shop() {
 					   */
 
 					   //Print stats
-		std::cout << "Do you want to buy " << potion_vector[_input]->get_name() << " for " << potion_vector[_input]->get_cost() << "?" << std::endl;
-		std::cout << "Effectiveness: " << 100 * potion_vector[_input]->get_effectiveness() << "%" << std::endl;
+		std::cout << "Do you want to buy " << potion_vector.vector[_input]->get_name() << " for " << potion_vector.vector[_input]->get_cost() << "?" << std::endl;
+		std::cout << "Effectiveness: " << 100 * potion_vector.vector[_input]->get_effectiveness() << "%" << std::endl;
 		std::cout << std::endl << "[0] Yes, [1] No" << std::endl;
 
 		int _toBuy, _successful_purchase;
 		std::cin >> _toBuy;
 		if (_toBuy == 0) {
-			_successful_purchase = buy_item(potion_vector[_input], player.inventory, &player);
+			_successful_purchase = buy_item(potion_vector.vector[_input], player.inventory, &player);
 		}
 		else {
 			system("cls");

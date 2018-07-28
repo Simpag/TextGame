@@ -131,6 +131,103 @@ void Equipment_Inventory::equip_item(Item* _item_to_equip, Inventory* _inventory
 	}
 }
 
+void Equipment_Inventory::force_equip_item(Item* _item_to_equip, Character* _player) {
+	switch (_item_to_equip->get_type()) {
+	case WeaponItem:
+		if (!this->got_weapon) {
+			std::cout << _item_to_equip->get_name() << " was equipped! \n";
+			this->equipment_inventory[4] = _item_to_equip; //Equipment from inventory
+			this->got_weapon = true; //Weapon equipped
+			calculate_stats(_player); //Update stats
+		}
+		else {
+			std::cout << "Replaced " << this->equipment_inventory[4]->get_name() << " with " << _item_to_equip->get_name() << std::endl;
+			this->equipment_inventory[4] = _item_to_equip; //Replace equipment
+			this->got_weapon = true; //Weapon equipped
+			calculate_stats(_player); //Update stats
+		}
+		break;
+
+	case ArmorItem:
+		switch (_item_to_equip->get_armor_type()) {
+		case Helmet:
+			if (!this->got_helmet) {
+				std::cout << _item_to_equip->get_name() << " was equipped! \n";
+				this->equipment_inventory[0] = _item_to_equip;
+				this->got_helmet = true;
+				calculate_stats(_player);
+			}
+			else {
+				std::cout << "Replaced " << this->equipment_inventory[0]->get_name() << " with " << _item_to_equip->get_name() << std::endl;
+				this->equipment_inventory[0] = _item_to_equip; //Replace equipment
+				this->got_helmet = true; //Weapon equipped
+				calculate_stats(_player); //Update stats
+			}
+			break;
+
+		case Chest:
+			if (!this->got_chest) {
+				std::cout << _item_to_equip->get_name() << " was equipped! \n";
+				this->equipment_inventory[1] = _item_to_equip;
+				this->got_chest = true;
+				calculate_stats(_player);
+			}
+			else {
+				std::cout << "Replaced " << this->equipment_inventory[1]->get_name() << " with " << _item_to_equip->get_name() << std::endl;
+				this->equipment_inventory[1] = _item_to_equip; //Replace equipment
+				this->got_chest = true; //Weapon equipped
+				calculate_stats(_player); //Update stats
+			}
+			break;
+
+		case Leg:
+			if (!this->got_leg) {
+				std::cout << _item_to_equip->get_name() << " was equipped! \n";
+				this->equipment_inventory[2] = _item_to_equip;
+				this->got_leg = true;
+				calculate_stats(_player);
+			}
+			else {
+				std::cout << "Replaced " << this->equipment_inventory[2]->get_name() << " with " << _item_to_equip->get_name() << std::endl;
+				this->equipment_inventory[2] = _item_to_equip; //Replace equipment
+				this->got_leg = true; //Weapon equipped
+				calculate_stats(_player); //Update stats
+			}
+			break;
+
+		case Feet:
+			if (!this->got_feet) {
+				std::cout << _item_to_equip->get_name() << " was equipped! \n";
+				this->equipment_inventory[3] = _item_to_equip; //Equipment inventory
+				this->got_feet = true;
+				calculate_stats(_player);
+			}
+			else {
+				std::cout << "Replaced " << this->equipment_inventory[3]->get_name() << " with " << _item_to_equip->get_name() << std::endl;
+				this->equipment_inventory[3] = _item_to_equip; //Replace equipment
+				this->got_feet = true; //Weapon equipped
+				calculate_stats(_player); //Update stats
+			}
+			break;
+		}
+		break;
+
+	case PotionItem:
+		if (!this->got_potion) {
+			std::cout << _item_to_equip->get_name() << " was equipped! \n";
+			this->equipment_inventory[5] = _item_to_equip; //Equipment inventory
+			got_potion = true;
+		}
+		else {
+			std::cout << "Replaced " << this->equipment_inventory[5]->get_name() << " with " << _item_to_equip->get_name() << std::endl;
+			this->equipment_inventory[5] = _item_to_equip; //Replace equipment
+			this->got_potion = true; //Weapon equipped
+			calculate_stats(_player); //Update stats
+		}
+		break;
+	}
+}
+
 void Equipment_Inventory::calculate_stats(Character* _player) {
 	double _damage = 0, _crit_chance = 0, _accuracy = 0, _damage_reduction = 0, _deflect_chance = 0, _health_boost = 0;
 	for (int i = 0; i < this->equipment_inventory_size; i++) {

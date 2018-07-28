@@ -12,12 +12,13 @@ public:
 	void load_game(Player *_player);
 
 private:
-	void load_player_stats(Player *_player);
-	bool save_file_exist;
-	std::string file_location = "C:/Users/simon/Desktop/TextGameSaveFile.txt";
-
+	void load_player_stats_from_save_string(Player *_player);
 	std::string convert_to_string();
 	std::string extract_element(std::string *_save_string);
+
+	bool save_file_exist;
+	const std::string file_location = "C:/Users/simon/Desktop/TextGameSaveFile.txt";
+
 
 //Vars
 	//Character
@@ -30,5 +31,8 @@ private:
 	//Inventory
 	std::vector<std::string> inventory;
 	int max_inventory_space;
+
+	//Equipment Inventory
+	std::vector<std::string> equipment_inventory;
 };
 

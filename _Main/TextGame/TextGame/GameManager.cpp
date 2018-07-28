@@ -2,13 +2,13 @@
 #include <fstream>
 #include "GameManager.h"
 
-/*#include "Armor_Vector.h"
+#include "Armor_Vector.h"
 #include "Weapon_Vector.h"
-#include "Potion_Vector.h"*/
+#include "Potion_Vector.h"
 
 GameManager::GameManager() {
 	std::fstream file;
-	file.open("TextGameSaveFile.txt", std::ios_base::out | std::ios_base::in);  // will not create file
+	file.open(file_location, std::ios_base::out | std::ios_base::in);  // will not create file
 	if (file.is_open())
 	{
 		//File exists
@@ -18,6 +18,15 @@ GameManager::GameManager() {
 	{
 		save_file_exist = false;
 	}
+	file.close();
+
+	//Reset variables
+	name.clear();
+	money = 0;
+	challenge_mode_level = 0;
+	max_inventory_space = 0;
+	inventory.clear();
+	equipment_inventory.clear();
 }
 
 int GameManager::save_game(Player *_player) {
@@ -54,6 +63,26 @@ Equipment Inventory
 		inventory.push_back(_player->inventory->get_item(i)->get_name());
 	}
 
+	//Equipment Inventory
+	//Helmet
+	if (_player->equipment_inventory->get_got_helmet())
+		equipment_inventory.push_back(_player->equipment_inventory->get_item(0)->get_name());
+	//Chest
+	if (_player->equipment_inventory->get_got_chest())
+		equipment_inventory.push_back(_player->equipment_inventory->get_item(1)->get_name());
+	//Leggings
+	if (_player->equipment_inventory->get_got_leg())
+		equipment_inventory.push_back(_player->equipment_inventory->get_item(2)->get_name());
+	//Boots
+	if (_player->equipment_inventory->get_got_feet())
+		equipment_inventory.push_back(_player->equipment_inventory->get_item(3)->get_name());
+	//Weapon
+	if (_player->equipment_inventory->get_got_weapon())
+		equipment_inventory.push_back(_player->equipment_inventory->get_item(4)->get_name());
+	//Potion
+	if (_player->equipment_inventory->get_got_potion())
+		equipment_inventory.push_back(_player->equipment_inventory->get_item(5)->get_name());
+
 
 	//Single string output
 	std::string save_string = convert_to_string();
@@ -76,13 +105,21 @@ std::string GameManager::convert_to_string() {
 	_string += std::to_string(this->money) + "|";
 	_string += std::to_string(this->challenge_mode_level) + "|";
 	_string += std::to_string(this->max_inventory_space) + "|";
+
 	_string += std::to_string(inventory.size()) + "|"; //write inventory size
 	for (int i = 0; i < this->inventory.size(); i++) //Saving inventory
 	{
 		_string += this->inventory.at(i) + "|";
 	}
-	
 
+	_string += std::to_string(equipment_inventory.size()) + "|"; //write inventory size
+	for (int i = 0; i < this->equipment_inventory.size(); i++) //Saving inventory
+	{
+		_string += this->equipment_inventory.at(i) + "|";
+	}
+	
+	std::cout << "Save: " << _string << std::endl;
+	system("pause");
 	return _string;
 }
 
@@ -97,11 +134,12 @@ void GameManager::load_game(Player *_player) {
 	}
 	save_file.close();
 
-	std::cout << save_string << std::endl;
+	std::cout << "Loading: " << save_string << std::endl;
 
 	bool _loading_elements = true;
-	int _elements = 0;
+	int _elements = 0, _size;
 
+	//Load variables from string
 	while (_loading_elements) {
 		if (!save_string.empty()) {
 			std::string _element;
@@ -123,11 +161,19 @@ void GameManager::load_game(Player *_player) {
 				this->max_inventory_space = stoi(_element);
 				break;
 			case 5: //Loading inventory
-				int _size = stoi(_element);
+				_size = stoi(_element);
 				for (int i = 0; i < _size; i++)
 				{
 					_element = extract_element(&save_string);
 					inventory.push_back(_element);
+					_elements++;
+				}
+				break;
+			default://Loading equipment inventory
+				_size = stoi(_element);
+				for (int i = 0; i < _size; i++) {
+					_element = extract_element(&save_string);
+					equipment_inventory.push_back(_element);
 					_elements++;
 				}
 			}
@@ -138,7 +184,7 @@ void GameManager::load_game(Player *_player) {
 	}
 
 	system("Pause");
-	load_player_stats(_player);
+	load_player_stats_from_save_string(_player);
 }
 
 std::string GameManager::extract_element(std::string *_save_string) {
@@ -154,40 +200,66 @@ std::string GameManager::extract_element(std::string *_save_string) {
 	return _element;
 }
 
-void GameManager::load_player_stats(Player *_player) {
+void GameManager::load_player_stats_from_save_string(Player *_player) {
 	//Character
 	_player->set_name(this->name);
 	_player->add_money(this->money);
 	
 	//Player
 	_player->set_challenge_mode_level(this->challenge_mode_level);
-	
+
 	//Inventory
 	_player->inventory->set_max_inventory_space(this->max_inventory_space);
-	/*
 	for (int i = 0; i < inventory.size(); i++) {
 		//Armor Items
-		for (int j = 0; j < armor_vector.size(); j++) {
-			if (inventory.at(i) == armor_vector.at(j)->get_name()) {
-				_player->inventory->add_item(armor_vector.at(j));
+		for (int j = 0; j < armor_vector.vector.size(); j++) {
+			if (inventory.at(i).compare(armor_vector.vector.at(j)->get_name()) == 0) {
+				_player->inventory->add_item(armor_vector.vector.at(j));
 				break;
 			}
 		}
 
 		//Weapon Items
-		for (int j = 0; j < weapon_vector.size(); j++) {
-			if (inventory.at(i) == weapon_vector.at(j)->get_name()) {
-				_player->inventory->add_item(weapon_vector.at(j));
+		for (int j = 0; j < weapon_vector.vector.size(); j++) {
+			if (inventory.at(i).compare(weapon_vector.vector.at(j)->get_name()) == 0) {
+				_player->inventory->add_item(weapon_vector.vector.at(j));
 				break;
 			}
 		}
 
 		//Potion Items
-		for (int j = 0; j < potion_vector.size(); j++) {
-			if (inventory.at(i) == potion_vector.at(j)->get_name()) {
-				_player->inventory->add_item(potion_vector.at(j));
+		for (int j = 0; j < potion_vector.vector.size(); j++) {
+			if (inventory.at(i).compare(potion_vector.vector.at(j)->get_name()) == 0) {
+				_player->inventory->add_item(potion_vector.vector.at(j));
 				break;
 			}
 		}
-	}*/
+	}
+
+	//Equipment Inventory
+	for (int i = 0; i < equipment_inventory.size(); i++) {
+		//Armor Items
+		for (int j = 0; j < armor_vector.vector.size(); j++) {
+			if (equipment_inventory.at(i).compare(armor_vector.vector.at(j)->get_name()) == 0) {
+				_player->equipment_inventory->force_equip_item(armor_vector.vector.at(j), _player);
+				break;
+			}
+		}
+
+		//Weapon Items
+		for (int k = 0; k < weapon_vector.vector.size(); k++) {
+			if (equipment_inventory.at(i).compare(weapon_vector.vector.at(k)->get_name()) == 0) {
+				_player->equipment_inventory->force_equip_item(weapon_vector.vector.at(k), _player);
+				break;
+			}
+		}
+
+		//Potion Items
+		for (int j = 0; j < potion_vector.vector.size(); j++) {
+			if (equipment_inventory.at(i).compare(potion_vector.vector.at(j)->get_name()) == 0) {
+				_player->equipment_inventory->force_equip_item(potion_vector.vector.at(j), _player);
+				break;
+			}
+		}
+	}
 }

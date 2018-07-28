@@ -7,12 +7,12 @@
 
 void display_armor_shop() {
 	int _input;
-	int _armor_vector_length = armor_vector.size();
+	int _armor_vector_length = armor_vector.vector.size();
 
 	ArmorType _previous_armor_type = NoArmorType;
 
 	for (int i = 0; i < _armor_vector_length; i++) {
-		ArmorType _present_armor_type = armor_vector.at(i)->get_armor_type();
+		ArmorType _present_armor_type = armor_vector.vector.at(i)->get_armor_type();
 
 		if (_present_armor_type != _previous_armor_type) {			
 			switch (_present_armor_type) {
@@ -33,7 +33,7 @@ void display_armor_shop() {
 			_previous_armor_type = _present_armor_type;
 		}
 
-		std::cout << "[" << i << "]" << " " << armor_vector.at(i)->get_name() << " Cost: " << armor_vector.at(i)->get_cost() << std::endl;
+		std::cout << "[" << i << "]" << " " << armor_vector.vector.at(i)->get_name() << " Cost: " << armor_vector.vector.at(i)->get_cost() << std::endl;
 	}
 
 	std::cout << "\n[" << _armor_vector_length << "] Back \n[n] Buy item \n";
@@ -55,17 +55,17 @@ void display_armor_shop() {
 					   */
 
 					   //Print stats
-		std::cout << "Do you want to buy " << armor_vector[_input]->get_name() << " for " << armor_vector[_input]->get_cost() << "?" << std::endl;
-		std::cout << "Damage reduction: " << 100*armor_vector[_input]->get_damage_reduction() << "%" << std::endl;
-		std::cout << "Accuracy: " << 100*armor_vector[_input]->get_accuracy() << "%" << std::endl;
-		std::cout << "Deflect chance: " << 100*armor_vector[_input]->get_deflect_chance() << "%" << std::endl;
-		std::cout << "Health boost: " << 100*armor_vector[_input]->get_health_boost() << "%" << std::endl;
+		std::cout << "Do you want to buy " << armor_vector.vector[_input]->get_name() << " for " << armor_vector.vector[_input]->get_cost() << "?" << std::endl;
+		std::cout << "Damage reduction: " << 100*armor_vector.vector[_input]->get_damage_reduction() << "%" << std::endl;
+		std::cout << "Accuracy: " << 100*armor_vector.vector[_input]->get_accuracy() << "%" << std::endl;
+		std::cout << "Deflect chance: " << 100*armor_vector.vector[_input]->get_deflect_chance() << "%" << std::endl;
+		std::cout << "Health boost: " << 100*armor_vector.vector[_input]->get_health_boost() << "%" << std::endl;
 		std::cout << std::endl << "[0] Yes, [1] No" << std::endl;
 
 		int _toBuy, _successful_purchase;
 		std::cin >> _toBuy;
 		if (_toBuy == 0) {
-			_successful_purchase = buy_item(armor_vector[_input], player.inventory, &player);
+			_successful_purchase = buy_item(armor_vector.vector[_input], player.inventory, &player);
 		}
 		else {
 			system("cls");

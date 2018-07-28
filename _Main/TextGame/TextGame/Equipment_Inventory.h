@@ -10,6 +10,7 @@ class Equipment_Inventory
 public:
 	Equipment_Inventory();
 	void equip_item(Item* _item_to_equip, Inventory* _inventory, Character* _player);
+	void force_equip_item(Item* _item_to_equip, Character* _player);
 
 	//Getters
 	std::string get_name(int _index) { return equipment_inventory[_index]->get_name(); }

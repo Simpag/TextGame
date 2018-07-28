@@ -1,3 +1,38 @@
 ﻿  GameManager.cpp
 c:\users\simon\documents\github\textgame\_main\textgame\textgame\inventory.h(15): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\armor_vector.h(25): warning C4305: 'argument': truncation from '__int64' to 'int'
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\armor_vector.h(25): warning C4309: 'argument': truncation of constant value
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\armor_vector.h(35): warning C4305: 'argument': truncation from '__int64' to 'int'
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\armor_vector.h(35): warning C4309: 'argument': truncation of constant value
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\armor_vector.h(45): warning C4305: 'argument': truncation from '__int64' to 'int'
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\armor_vector.h(45): warning C4309: 'argument': truncation of constant value
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\armor_vector.h(56): warning C4305: 'argument': truncation from '__int64' to 'int'
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\armor_vector.h(56): warning C4309: 'argument': truncation of constant value
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\weapon_vector.h(34): warning C4305: 'argument': truncation from '__int64' to 'int'
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\weapon_vector.h(34): warning C4309: 'argument': truncation of constant value
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\weapon_vector.h(35): warning C4305: 'argument': truncation from '__int64' to 'int'
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\weapon_vector.h(35): warning C4309: 'argument': truncation of constant value
+  TextGame.cpp
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\inventory.h(15): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\challenge_mode_enemy_vector.h(31): warning C4305: 'argument': truncation from 'unsigned __int64' to 'int'
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\challenge_mode_enemy_vector.h(31): warning C4309: 'argument': truncation of constant value
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\menu_training.h(18): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\weapon_vector.h(34): warning C4305: 'argument': truncation from '__int64' to 'int'
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\weapon_vector.h(34): warning C4309: 'argument': truncation of constant value
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\weapon_vector.h(35): warning C4305: 'argument': truncation from '__int64' to 'int'
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\weapon_vector.h(35): warning C4309: 'argument': truncation of constant value
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\weapon_shop.h(14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\armor_vector.h(25): warning C4305: 'argument': truncation from '__int64' to 'int'
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\armor_vector.h(25): warning C4309: 'argument': truncation of constant value
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\armor_vector.h(35): warning C4305: 'argument': truncation from '__int64' to 'int'
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\armor_vector.h(35): warning C4309: 'argument': truncation of constant value
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\armor_vector.h(45): warning C4305: 'argument': truncation from '__int64' to 'int'
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\armor_vector.h(45): warning C4309: 'argument': truncation of constant value
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\armor_vector.h(56): warning C4305: 'argument': truncation from '__int64' to 'int'
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\armor_vector.h(56): warning C4309: 'argument': truncation of constant value
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\armor_shop.h(10): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\potion_shop.h(9): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\textgame.cpp(31): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+c:\users\simon\documents\github\textgame\_main\textgame\textgame\item_functions.h(20): warning C4715: 'buy_item': not all control paths return a value
   TextGame.vcxproj -> C:\Users\simon\Documents\GitHub\TextGame\_Main\TextGame\x64\Debug\TextGame.exe
