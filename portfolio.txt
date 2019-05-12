@@ -2,8 +2,7 @@
   "Modalname": "TextGameModal",
   "ProjectName" : "Text based game in C++",
   "ProjectTopic" : "C++ Game",
-  "ProjectDescription" : "Detta var slutprojektet i kursen C++ som lästes i år två på Klara Gymnasium. Det är ett swords and sandals liknande spel.
-  Spelet går ut på att ranka upp en karaktär genom olika strider.",
+  "ProjectDescription" : "Detta var slutprojektet i kursen C++ som lästes i år två på Klara Gymnasium. Det är ett swords and sandals liknande spel. Spelet går ut på att ranka upp en karaktär genom olika strider.",
   "Date" : "25/012-2017",
   "Image" : "https://i.stack.imgur.com/razeB.png"
 }
